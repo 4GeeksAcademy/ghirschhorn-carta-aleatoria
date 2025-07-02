@@ -1,6 +1,47 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
-body{
+body {
     background-image: url(10013190.jpg);
-    background-position: center; 
+    background-position: center;
+}
+
+.card {
+    margin: auto;
+    margin-top: 50px;
+    width: 350px;
+    height: 520px;
+    background-color: white;
+    border-radius: 12px;
+    justify-content: space-between;
+    padding: 10px 15px;
+
+}
+
+.top,
+.bottom {
+    font-size: 80px;
+}
+
+.bottom {
+    transform: rotate(180deg);
+    align-self: flex-end;
+}
+
+.numero {
+    font-size: 100px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1;
+}
+
+
+.corazon,
+.diamante {
+    color: red;
+}
+
+.picas,
+.trebol {
+    color: black;
 }
