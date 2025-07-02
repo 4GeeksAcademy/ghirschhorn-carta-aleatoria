@@ -45,3 +45,16 @@ body {
 .trebol {
     color: black;
 }
+
+
+#button-generar {
+    border-radius: 50px;
+    border: 2px antiquewhite solid;
+    color: antiquewhite;
+}
+
+#button-generar:hover {
+    background-color: antiquewhite;
+    color: darkslategrey;
+}
+    

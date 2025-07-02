@@ -20,22 +20,18 @@ window.onload = function () {
     '♦': 'diamante'
   };
 
-  const paloClase = palosTexto[paloResultado];
-
-  console.log("Palo elegido: ", paloResultado);
+  const paloEstilo = palosTexto[paloResultado];
 
   // Número carta
   const numCard = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
   const numIndex = Math.floor(Math.random() * numCard.length);
   const numResultado = numCard[numIndex];
 
-  console.log("Número es: ", numResultado);
-
   // Carta
-  function addElement() {
+  function addElement(paloResultado, paloEstilo, numResultado) {
     const cartaDiv = document.createElement("div");
     cartaDiv.classList.add("card");
-    cartaDiv.classList.add(paloClase);
+    cartaDiv.classList.add(paloEstilo);
 
     const topDiv = document.createElement("div");
     topDiv.classList.add("top");
@@ -56,6 +52,25 @@ window.onload = function () {
     document.querySelector('#card-container').appendChild(cartaDiv);
   }
 
-  addElement();
-  
+  addElement(paloResultado, paloEstilo, numResultado);
+
+  function generarCarta() {
+    const paloIndex = Math.floor(Math.random() * palos.length);
+    const paloResultado = palos[paloIndex];
+    const paloEstilo = palosTexto[paloResultado];
+
+    const numIndex = Math.floor(Math.random() * numCard.length);
+    const numResultado = numCard[numIndex];
+
+    addElement(paloResultado, paloEstilo, numResultado);
+
+  }
+
+  // Botón
+  const boton = document.querySelector('#button-generar');
+  boton.addEventListener('click', () => {
+    document.querySelector('#card-container').innerHTML = '';
+    generarCarta();
+  });
+
 };
